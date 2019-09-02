@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ajoobee</string>
+    <string name="email">email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+
+    <string name="register">Register</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_linkin">Login with LinkIn</string>
+    <string name="select_location">select location</string>
+    <string name="select_desired_job">select desired job</string>
+
+    <string-array name="array_location">
+        <item>@string/select_location</item>
+        <item>Yangon</item>
+        <item>Bago</item>
+        <item>Taungoo</item>
+        <item>Mandalay</item>
+        <item>Muse</item>
+        <item>Thanlyin</item>
+        <item>Kayan</item>
+        <item>Hlegu</item>
+    </string-array>
+
+    <string-array name="array_desired_job">
+        <item>@string/select_desired_job</item>
+        <item>Marketing</item>
+        <item>IT Developer</item>
+        <item>Warehouse Manager</item>
+        <item>Supervisor</item>
+    </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
