@@ -29,23 +29,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     @BindView(R.id.txtConfirmPassword)
     EditText txtConfirmPassword;
 
-    @BindView(R.id.txtFullName)
-    EditText txtFullName;
-
-    @BindView(R.id.spnDesiredJob)
-    Spinner spnDesiredJob;
-
-    @BindView(R.id.spnLocation)
-    Spinner spnLocation;
-
     @BindView(R.id.btnRegister)
     Button btnRegister;
-
-    @BindView(R.id.btnFacebookRegister)
-    Button btnLoginWithFacebook;
-
-    @BindView(R.id.btnLinkInRegister)
-    Button btnLoginWithLinkIn;
 
     String[] arrLocation,arrDesiredJob;
 
@@ -75,8 +60,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         spnLocationadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spnLocation.setAdapter(spnLocationadapter);
-        spnLocation.setOnItemSelectedListener(this);
+//        spnLocation.setAdapter(spnLocationadapter);
+//        spnLocation.setOnItemSelectedListener(this);
 
         //populate desired location spinner
         ArrayAdapter<CharSequence> spnDesiredJobadapter = ArrayAdapter.createFromResource(this,
@@ -84,8 +69,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         spnDesiredJobadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spnDesiredJob.setAdapter(spnDesiredJobadapter);
-        spnDesiredJob.setOnItemSelectedListener(this);
+//        spnDesiredJob.setAdapter(spnDesiredJobadapter);
+//        spnDesiredJob.setOnItemSelectedListener(this);
 
 
 
@@ -93,16 +78,16 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (parent.getId()){
-            case (R.id.spnLocation):{
-                Toast.makeText(mContext,arrLocation[position],Toast.LENGTH_SHORT).show();
-                break;
-            }
-            case (R.id.spnDesiredJob):{
-                Toast.makeText(mContext,arrDesiredJob[position],Toast.LENGTH_SHORT).show();
-                break;
-            }
-        }
+//        switch (parent.getId()){
+//            case (R.id.spnLocation):{
+//                Toast.makeText(mContext,arrLocation[position],Toast.LENGTH_SHORT).show();
+//                break;
+//            }
+//            case (R.id.spnDesiredJob):{
+//                Toast.makeText(mContext,arrDesiredJob[position],Toast.LENGTH_SHORT).show();
+//                break;
+//            }
+//        }
 
     }
 
@@ -116,7 +101,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         Util.Log(TAG, "email " + txtEmail.getText().toString()+
                 " pwd " + txtPassword.getText().toString() +
                 " c_pwd " + txtConfirmPassword.getText().toString() +
-                " fullname " + txtFullName.getText().toString() +
-                " location " + spnLocation.getSelectedItem() + " desiredlocation " + spnDesiredJob.getSelectedItem());
+                " fullname " + txtEmail.getText().toString());
     }
 }

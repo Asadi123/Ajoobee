@@ -13,4 +13,5 @@ public class Constants {
     public static final String appCode = "zannapp";
     public static final String zann_shaed_link = SERVER_ADDRESS +"/zann_website/watch/";
     public static final String end_point = "zann_backend-api/api/";
+    public static final String url = "http://192.168.1.107:3003/";
 }

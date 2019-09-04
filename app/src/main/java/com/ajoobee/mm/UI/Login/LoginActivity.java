@@ -9,11 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ajoobee.mm.R;
-import com.ajoobee.mm.UI.Register.RegisterActivity;
 import com.ajoobee.mm.Data.Network.Response.ServerReturn;
+import com.ajoobee.mm.UI.Register.RegisterActivity;
 import com.ajoobee.mm.ViewModelFactory;
 
 import javax.inject.Inject;
@@ -24,14 +25,17 @@ import butterknife.OnClick;
 import dagger.android.AndroidInjection;
 
 public class LoginActivity extends AppCompatActivity {
-  @BindView(R.id.txtUserName)
+  @BindView(R.id.txtCompanyName)
   EditText txtUserName;
 
-    @BindView(R.id.btnLogin)
+    @BindView(R.id.btnRegister)
     Button btnLogin;
 
-    @BindView(R.id.btnRegister)
-    Button btnRegister;
+//    @BindView(R.id.btnRegister)
+//    Button btnRegister;
+
+    @BindView(R.id.signUpTextView)
+    TextView signUpTextView;
 
     @Inject
     ViewModelFactory viewModelFactory;
@@ -47,9 +51,10 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         AndroidInjection.inject(this);
         mContext = this;
+
     }
 
-    @OnClick(R.id.btnLogin)
+    @OnClick(R.id.btnRegister)
     public void callLogin(Button btn) {
 
         if(viewModelFactory != null) {
@@ -59,25 +64,32 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(@Nullable ServerReturn serverReturn) {
 
-                    if(serverReturn.getStatus().equals("fail")){
-                        Toast.makeText(mContext, serverReturn.getDescription(), Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(mContext, serverReturn.getDescription(), Toast.LENGTH_SHORT).show();
-                    }
+//                    if(serverReturn.getStatus().equals("fail")){
+//                        Toast.makeText(mContext, serverReturn.getDescription(), Toast.LENGTH_SHORT).show();
+//                    }else{
+//                        Toast.makeText(mContext, serverReturn.getDescription(), Toast.LENGTH_SHORT).show();
+//                    }
                 }
             });
         }
     }
 
-    public void alert(ServerReturn serverReturn){
-        Toast.makeText(mContext,serverReturn.getName(),Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.btnRegister)
-    public void callRegisterActivity(Button btn){
+    @OnClick(R.id.signUpTextView)
+    public void callRegister(TextView textView)
+    {
         Intent intent = new Intent(mContext, RegisterActivity.class);
         mContext.startActivity(intent);
     }
+
+    public void alert(ServerReturn serverReturn){
+//        Toast.makeText(mContext,serverReturn.getName(),Toast.LENGTH_SHORT).show();
+    }
+
+//    @OnClick(R.id.btnRegister)
+//    public void callRegisterActivity(Button btn){
+//        Intent intent = new Intent(mContext, RegisterActivity.class);
+//        mContext.startActivity(intent);
+//    }
 
 
 }

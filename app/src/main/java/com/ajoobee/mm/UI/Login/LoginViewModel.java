@@ -32,7 +32,7 @@ public class LoginViewModel extends ViewModel {
         if(name.isEmpty()){
             loginListener.fail();
         }
-        serverReturnLiveData = loginRepository.callApiLogin(name);
+//        serverReturnLiveData = loginRepository.callApiLogin(name);
         return serverReturnLiveData;
     }
 

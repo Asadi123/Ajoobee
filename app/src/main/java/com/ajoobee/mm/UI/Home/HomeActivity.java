@@ -196,11 +196,15 @@ public class HomeActivity extends BaseActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, jobsFragment,JobsFragment.TAG)
                         .commit();*/
+
+                Intent intent = new Intent(mContext, LoginActivity.class);
+                mContext.startActivity(intent);
                 break;
             }
 
             case (R.id.imgLogin):{
                 Intent intent = new Intent(mContext, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
                 break;
             }
